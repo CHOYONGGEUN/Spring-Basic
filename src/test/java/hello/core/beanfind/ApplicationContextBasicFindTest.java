@@ -1,9 +1,8 @@
 package hello.core.beanfind;
 
+import hello.core.AppConfig;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
-import hello.core.order.AppConfig;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
@@ -31,7 +30,7 @@ class ApplicationContextBasicFindTest {
     }@Test
     @DisplayName("구체 타입으로 조회")
     void findBeanByType(){
-        MemberService memberService = ac.getBean(MemberService.class);
+        MemberServiceImpl memberService = ac.getBean(MemberServiceImpl.class);
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
 
     }
